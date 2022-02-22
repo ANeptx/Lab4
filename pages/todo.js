@@ -57,17 +57,18 @@ const Todo = () => {
         })
     }
 
-    return (<>
-    <h1>Todo</h1>
-    <input type="text" name="name" onChange={(e) => setName(e.target.value)}    />
-    <button onClick={add} >Add</button>
+    return (<div className="bg-indogo-400 h-screen flex flex-col items-center p-8" >
+    <h1 className="text-3xl text-indigo-200">Todo</h1>
+    <div className="flex items-center m-4 border-4">
+        <input className="rounded-lg text-3xl mt-2" type="text" name="name" onChange={(e) => setName(e.target.value)}/>
+        <button className="bg-green-400 text-indigo-800 mb-2 p-2" onClick={add} >Add</button> {name}
+    </div>
     <ul>
     {
-        tasks.map( (item) => <li key={item.id}>{item.id} {item.name}</li>),
         renderTasks()
     }
     </ul>
-    </>)
+    </div>)
 }
 
 export default Todo
