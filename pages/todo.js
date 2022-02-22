@@ -50,9 +50,8 @@ const Todo = ({ avatar_url, login }) => {
 
     const renderTasks = () => {
         return tasks.map((item, index) => {
-            return (<li className="m-4 border-2 border-dashed p-8" key={index}>
-                <div className="text-3xl text-indigo-200 drop-shadow-lg">
-                    <div className="absolute bottom-0 right-0 text-xl mr-2 text-indigo-500">
+            return (<li className="relative m-4 border-2 border-dashed p-8" key={index}>
+                    <div className="absolute bottom-0 right-0 text-xl mr-2 text-indigo-200 drop-shadow-lg">
                         {index+1}
                     </div>
                     {
@@ -62,7 +61,7 @@ const Todo = ({ avatar_url, login }) => {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)} />
                     }
-                </div>
+
 
                 <div className="mt-8 flex justify-center">
                     <button className="mr-4 drop-shadow-lg bg-red-300 text-indigo-900 hover:bg-red-200 rounded-lg p-4" onClick={() => del(item.id)} >Delete</button>
